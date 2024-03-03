@@ -32,12 +32,14 @@ struct TripListView: View {
                     "Add a trip to get started",
                     systemImage: "sparkles"
                 )
+                .symbolRenderingMode(.multicolor)
                 
             } else if results.isEmpty {
                 ContentUnavailableView(
                     "No search results for \(query)",
                     systemImage: "text.magnifyingglass"
                 )
+                .symbolRenderingMode(.multicolor)
                 
             } else {
                 List(results, id: \.id, selection: $selection) { trip in
@@ -48,11 +50,7 @@ struct TripListView: View {
                         Button {
                             trip.isStarred.toggle()
                         } label: {
-                            if trip.isStarred {
-                                Label("Starred", systemImage: "star.slash")
-                            } else {
-                                Label("Not Starred", systemImage: "star.fill")
-                            }
+                            Image(systemName: trip.isStarred ? "star.slash" : "star.fill")
                         }
                         .tint(trip.isStarred ? .gray : .yellow)
                     }

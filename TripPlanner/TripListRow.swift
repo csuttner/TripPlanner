@@ -24,7 +24,7 @@ struct TripListRow: View {
                     HStack {
                         if trip.isStarred {
                             Image(systemName: "star.fill")
-                                .tint(.yellow)
+                                .symbolRenderingMode(.multicolor)
                         }
                         
                         Text(trip.name)

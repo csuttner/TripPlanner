@@ -14,7 +14,6 @@ struct TripPlannerApp: App {
         WindowGroup {
             HomeView()
                 .modelContainer(for: Trip.self, isAutosaveEnabled: false)
-                .symbolRenderingMode(.multicolor)
         }
     }
 }

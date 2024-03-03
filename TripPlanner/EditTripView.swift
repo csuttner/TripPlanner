@@ -13,61 +13,42 @@ struct EditTripView: View {
         self.trip = trip
         self.changesSaved = !trip.hasChanges
     }
-    
-    var trip: Trip
-    
-    @Environment(\.modelContext) private var context
-    
-    @State private var error: AppError?
-    @State private var changesSaved: Bool
-    
-    var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 24) {
-                TripFormView(trip: trip, changesSaved: $changesSaved)
 
-                Spacer()
-                
-                Button(changesSaved ? "Saved" : "Save") {
-                    if emptyValues.isEmpty {
-                        save()
+    let trip: Trip
+
+    @Environment(\.modelContext) private var context
+    @State private var changesSaved: Bool
+    @FocusState private var focusedField: TripField?
+
+    var body: some View {
+        List {
+            EditTripInfoSection(changesSaved: $changesSaved, focusedField: $focusedField)
+            
+            EditTripScheduleSection(changesSaved: $changesSaved)
+            
+            EditTripSaveButton(changesSaved: $changesSaved)
+        }
+        .environment(trip)
+        .contentShape(Rectangle())
+        .onTapGesture {
+            focusedField = nil
+        }
+        .navigationTitle(trip.name.isEmpty ? "New Trip" : trip.name)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    trip.isStarred.toggle()
+                    
+                } label: {
+                    if trip.isStarred {
+                        Image(systemName: "star.fill")
+                            .foregroundStyle(.yellow)
                     } else {
-                        error = .missingValues(emptyValues)
+                        Image(systemName: "star")
+                            .foregroundStyle(.gray)
                     }
                 }
-                .disabled(changesSaved)
-                .font(.title2)
-                .fontWeight(.semibold)
-                .buttonStyle(.borderedProminent)
-                .frame(maxWidth: .infinity)
             }
-            .alert("Error", isPresented: $error.isSome) {
-                Text("Ok")
-            } message: {
-                Text(error?.localizedDescription ?? "")
-            }
-            .navigationTitle(trip.name.isEmpty ? "New Trip" : trip.name)
-            .padding()
-        }
-    }
-    
-    private var emptyValues: [String] {
-        let fields: [TripField?] = [
-            trip.name.isEmpty ? .name : nil,
-            trip.destination.isEmpty ? .destination : nil
-        ]
-        
-        return fields.compactMap { $0?.rawValue }
-    }
-    
-    private func save() {
-        do {
-            context.insert(trip)
-            try context.save()
-            changesSaved = true
-            
-        } catch {
-            self.error = .save(error)
         }
     }
 }

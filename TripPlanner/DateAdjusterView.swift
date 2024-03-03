@@ -11,26 +11,29 @@ struct DateAdjusterView: View {
     @Binding var date: Date
 
     var body: some View {
-        HStack {
-            Text(date.abbreviated)
-                .font(.title2)
-            
-            Spacer()
-            
-            HStack(alignment: .center) {
-                Button("", systemImage: "minus.circle") {
-                    changeDate(by: -1)
-                }
-                .buttonRepeatBehavior(.enabled)
-
-                Button("", systemImage: "plus.circle") {
-                    changeDate(by: 1)
-                }
-                .buttonRepeatBehavior(.enabled)
+        HStack(alignment: .center) {
+            Button {
+                changeDate(by: -1)
+            } label: {
+                Image(systemName: "chevron.left")
             }
-            .font(.title2)
-            .fontWeight(.bold)
+            .buttonStyle(.borderless)
+            .buttonRepeatBehavior(.enabled)
+            
+            DatePicker("", selection: $date, displayedComponents: .date)
+                .labelsHidden()
+                .frame(width: 136)
+
+            Button {
+                changeDate(by: 1)
+            } label: {
+                Image(systemName: "chevron.right")
+            }
+            .buttonStyle(.borderless)
+            .buttonRepeatBehavior(.enabled)
         }
+        .font(.title2)
+        .fontWeight(.bold)
     }
     
     private func changeDate(by value: Int) {
@@ -43,5 +46,5 @@ struct DateAdjusterView: View {
 }
 
 #Preview {
-    DateAdjusterView(date: .constant(Date()))
+    return DateAdjusterView(date: .constant(Date()))
 }

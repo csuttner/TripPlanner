@@ -21,6 +21,7 @@ struct NewTripToolbarItem: ToolbarContent {
                     
                     Image(systemName: "airplane")
                         .fontWeight(.ultraLight)
+                        .symbolRenderingMode(.multicolor)
                 }
             }
         }
