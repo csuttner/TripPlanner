@@ -11,10 +11,14 @@ import SwiftData
 enum TripField: String {
     case name
     case destination
+    case startDate
+    case endDate
 }
 
 struct TripFormView: View {
     var trip: Trip
+    
+    @Binding var changesSaved: Bool
     
     @FocusState private var focusedField: TripField?
     
@@ -22,25 +26,25 @@ struct TripFormView: View {
         @Bindable var trip = trip
 
         VStack(alignment: .leading, spacing: 24) {
-            formField("Name") {
+            formField("Name", observe: $trip.name) {
                 TextField("Name", text: $trip.name)
                     .focused($focusedField, equals: .name)
                     .textFieldStyle(.roundedBorder)
                     .font(.title2)
             }
             
-            formField("Destination") {
+            formField("Destination", observe: $trip.destination) {
                 TextField("Destination", text: $trip.destination)
                     .focused($focusedField, equals: .destination)
                     .textFieldStyle(.roundedBorder)
                     .font(.title2)
             }
             
-            formField("Start Date") {
+            formField("Start Date", observe: $trip.startDate) {
                 DateAdjusterView(date: $trip.startDate)
             }
             
-            formField("End Date") {
+            formField("End Date", observe: $trip.endDate) {
                 DateAdjusterView(date: $trip.endDate)
             }
         }
@@ -59,8 +63,9 @@ struct TripFormView: View {
         }
     }
     
-    @ViewBuilder private func formField(
+    @ViewBuilder private func formField<T: Equatable>(
         _ title: String,
+        observe binding: Binding<T>,
         _ content: @escaping (() -> some View)
     ) -> some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -69,12 +74,15 @@ struct TripFormView: View {
             
             content()
         }
+        .onChange(of: binding.wrappedValue) {
+            changesSaved = false
+        }
     }
 }
 
 #Preview {
     let (trip, container) = Preview.trip
     
-    return TripFormView(trip: trip)
+    return TripFormView(trip: trip, changesSaved: .constant(false))
         .modelContainer(container)
 }

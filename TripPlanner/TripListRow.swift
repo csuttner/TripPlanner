@@ -38,7 +38,7 @@ struct TripListRow: View {
                 Spacer()
                 
                 // manually replicating navigationlink appearance
-                // navigationlinks currently dont work in these conditions
+                // navigationlinks currently dont work inside a selectable list
                 if editMode == .inactive {
                     Image(systemName: "chevron.right")
                         .font(.footnote)

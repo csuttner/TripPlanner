@@ -9,35 +9,37 @@ import SwiftUI
 import SwiftData
 
 struct EditTripView: View {
+    init(trip: Trip) {
+        self.trip = trip
+        self.changesSaved = !trip.hasChanges
+    }
+    
     var trip: Trip
     
     @Environment(\.modelContext) private var context
     
     @State private var error: AppError?
-    @State private var areChangesSaved = false
+    @State private var changesSaved: Bool
     
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 24) {
-                TripFormView(trip: trip)
-                
+                TripFormView(trip: trip, changesSaved: $changesSaved)
+
                 Spacer()
                 
-                Button(areChangesSaved ? "Saved" : "Save") {
+                Button(changesSaved ? "Saved" : "Save") {
                     if emptyValues.isEmpty {
                         save()
                     } else {
                         error = .missingValues(emptyValues)
                     }
                 }
-                .disabled(areChangesSaved)
+                .disabled(changesSaved)
                 .font(.title2)
                 .fontWeight(.semibold)
                 .buttonStyle(.borderedProminent)
                 .frame(maxWidth: .infinity)
-            }
-            .onChange(of: trip) {
-                areChangesSaved = false
             }
             .alert("Error", isPresented: $error.isSome) {
                 Text("Ok")
@@ -62,7 +64,7 @@ struct EditTripView: View {
         do {
             context.insert(trip)
             try context.save()
-            areChangesSaved = true
+            changesSaved = true
             
         } catch {
             self.error = .save(error)

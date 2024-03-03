@@ -13,7 +13,7 @@ struct TripPlannerApp: App {
     var body: some Scene {
         WindowGroup {
             HomeView()
-                .modelContainer(for: Trip.self)
+                .modelContainer(for: Trip.self, isAutosaveEnabled: false)
                 .symbolRenderingMode(.multicolor)
         }
     }

@@ -11,7 +11,7 @@ import SwiftData
 extension Preview {
     static let trip: (Trip, ModelContainer) = {
         let config = ModelConfiguration(isStoredInMemoryOnly: true)
-        let container = try! ModelContainer(for: RowItem.self, configurations: config)
+        let container = try! ModelContainer(for: Trip.self, configurations: config)
         
         return (Trip(), container)
     }()
