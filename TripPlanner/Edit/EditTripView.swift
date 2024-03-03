@@ -28,28 +28,15 @@ struct EditTripView: View {
             
             EditTripSaveButton(changesSaved: $changesSaved)
         }
-        .environment(trip)
         .contentShape(Rectangle())
         .onTapGesture {
             focusedField = nil
         }
         .navigationTitle(trip.name.isEmpty ? "New Trip" : trip.name)
         .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Button {
-                    trip.isStarred.toggle()
-                    
-                } label: {
-                    if trip.isStarred {
-                        Image(systemName: "star.fill")
-                            .foregroundStyle(.yellow)
-                    } else {
-                        Image(systemName: "star")
-                            .foregroundStyle(.gray)
-                    }
-                }
-            }
+            StarToolbarItem()
         }
+        .environment(trip)
     }
 }
 
