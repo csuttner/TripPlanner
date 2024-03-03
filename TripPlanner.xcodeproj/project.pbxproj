@@ -10,18 +10,19 @@
 		F31C0BB02B93EF7A006B0FED /* ListRowBackgroundHiddenModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31C0BAF2B93EF7A006B0FED /* ListRowBackgroundHiddenModifier.swift */; };
 		F31C0BBA2B940538006B0FED /* NewTripToolbarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31C0BB92B940538006B0FED /* NewTripToolbarItem.swift */; };
 		F31C0BBC2B9405A5006B0FED /* DeleteTripToolbarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31C0BBB2B9405A5006B0FED /* DeleteTripToolbarItem.swift */; };
-		F31C0BBE2B9407C7006B0FED /* TripListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31C0BBD2B9407C7006B0FED /* TripListView.swift */; };
+		F31C0BBE2B9407C7006B0FED /* HomeContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31C0BBD2B9407C7006B0FED /* HomeContentView.swift */; };
 		F3F377702B94D78B0092DCBD /* DynamicStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3776F2B94D78B0092DCBD /* DynamicStack.swift */; };
 		F3F377722B94E70B0092DCBD /* EditTripInfoSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F377712B94E70B0092DCBD /* EditTripInfoSection.swift */; };
 		F3F377742B94E7370092DCBD /* EditTripScheduleSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F377732B94E7370092DCBD /* EditTripScheduleSection.swift */; };
 		F3F377762B94E7520092DCBD /* EditTripSaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F377752B94E7520092DCBD /* EditTripSaveButton.swift */; };
 		F3F377782B94F8510092DCBD /* StarToolbarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F377772B94F8510092DCBD /* StarToolbarItem.swift */; };
+		F3F3777D2B94FAAF0092DCBD /* TripListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3777C2B94FAAF0092DCBD /* TripListView.swift */; };
 		F3F9D8302B937D1C004E5CC9 /* TripPlannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9D82F2B937D1C004E5CC9 /* TripPlannerApp.swift */; };
 		F3F9D8322B937D1C004E5CC9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9D8312B937D1C004E5CC9 /* HomeView.swift */; };
 		F3F9D8342B937D1D004E5CC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3F9D8332B937D1D004E5CC9 /* Assets.xcassets */; };
 		F3F9D8372B937D1D004E5CC9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3F9D8362B937D1D004E5CC9 /* Preview Assets.xcassets */; };
 		F3F9D83E2B937D38004E5CC9 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9D83D2B937D38004E5CC9 /* Trip.swift */; };
-		F3F9D8402B9383CC004E5CC9 /* EditTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9D83F2B9383CC004E5CC9 /* EditTripView.swift */; };
+		F3F9D8402B9383CC004E5CC9 /* TripDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9D83F2B9383CC004E5CC9 /* TripDetailView.swift */; };
 		F3F9D8422B93868B004E5CC9 /* DateAdjusterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F9D8412B93868B004E5CC9 /* DateAdjusterView.swift */; };
 		F3FBAECD2B93B12C00732608 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FBAECC2B93B12C00732608 /* AppError.swift */; };
 		F3FBAED32B93D22100732608 /* TripListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FBAED22B93D22100732608 /* TripListRow.swift */; };
@@ -33,19 +34,20 @@
 		F31C0BAF2B93EF7A006B0FED /* ListRowBackgroundHiddenModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowBackgroundHiddenModifier.swift; sourceTree = "<group>"; };
 		F31C0BB92B940538006B0FED /* NewTripToolbarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTripToolbarItem.swift; sourceTree = "<group>"; };
 		F31C0BBB2B9405A5006B0FED /* DeleteTripToolbarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTripToolbarItem.swift; sourceTree = "<group>"; };
-		F31C0BBD2B9407C7006B0FED /* TripListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListView.swift; sourceTree = "<group>"; };
+		F31C0BBD2B9407C7006B0FED /* HomeContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentView.swift; sourceTree = "<group>"; };
 		F3F3776F2B94D78B0092DCBD /* DynamicStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicStack.swift; sourceTree = "<group>"; };
 		F3F377712B94E70B0092DCBD /* EditTripInfoSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTripInfoSection.swift; sourceTree = "<group>"; };
 		F3F377732B94E7370092DCBD /* EditTripScheduleSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTripScheduleSection.swift; sourceTree = "<group>"; };
 		F3F377752B94E7520092DCBD /* EditTripSaveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTripSaveButton.swift; sourceTree = "<group>"; };
 		F3F377772B94F8510092DCBD /* StarToolbarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarToolbarItem.swift; sourceTree = "<group>"; };
+		F3F3777C2B94FAAF0092DCBD /* TripListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListView.swift; sourceTree = "<group>"; };
 		F3F9D82C2B937D1C004E5CC9 /* TripPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3F9D82F2B937D1C004E5CC9 /* TripPlannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripPlannerApp.swift; sourceTree = "<group>"; };
 		F3F9D8312B937D1C004E5CC9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F3F9D8332B937D1D004E5CC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3F9D8362B937D1D004E5CC9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F3F9D83D2B937D38004E5CC9 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
-		F3F9D83F2B9383CC004E5CC9 /* EditTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTripView.swift; sourceTree = "<group>"; };
+		F3F9D83F2B9383CC004E5CC9 /* TripDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailView.swift; sourceTree = "<group>"; };
 		F3F9D8412B93868B004E5CC9 /* DateAdjusterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAdjusterView.swift; sourceTree = "<group>"; };
 		F3FBAECC2B93B12C00732608 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		F3FBAED22B93D22100732608 /* TripListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListRow.swift; sourceTree = "<group>"; };
@@ -68,7 +70,8 @@
 			isa = PBXGroup;
 			children = (
 				F3F9D8312B937D1C004E5CC9 /* HomeView.swift */,
-				F31C0BBD2B9407C7006B0FED /* TripListView.swift */,
+				F31C0BBD2B9407C7006B0FED /* HomeContentView.swift */,
+				F3F3777C2B94FAAF0092DCBD /* TripListView.swift */,
 				F3FBAED22B93D22100732608 /* TripListRow.swift */,
 				F31C0BAF2B93EF7A006B0FED /* ListRowBackgroundHiddenModifier.swift */,
 				F31C0BB92B940538006B0FED /* NewTripToolbarItem.swift */,
@@ -77,17 +80,17 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		F3F3777A2B94F8C70092DCBD /* Edit */ = {
+		F3F3777A2B94F8C70092DCBD /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				F3F9D83F2B9383CC004E5CC9 /* EditTripView.swift */,
+				F3F9D83F2B9383CC004E5CC9 /* TripDetailView.swift */,
 				F3F377772B94F8510092DCBD /* StarToolbarItem.swift */,
 				F3F377712B94E70B0092DCBD /* EditTripInfoSection.swift */,
 				F3F377732B94E7370092DCBD /* EditTripScheduleSection.swift */,
 				F3F377752B94E7520092DCBD /* EditTripSaveButton.swift */,
 				F3F9D8412B93868B004E5CC9 /* DateAdjusterView.swift */,
 			);
-			path = Edit;
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		F3F3777B2B94F8DB0092DCBD /* Util */ = {
@@ -123,7 +126,7 @@
 				F3F9D83D2B937D38004E5CC9 /* Trip.swift */,
 				F3FBAECC2B93B12C00732608 /* AppError.swift */,
 				F3F377792B94F8BD0092DCBD /* Home */,
-				F3F3777A2B94F8C70092DCBD /* Edit */,
+				F3F3777A2B94F8C70092DCBD /* Detail */,
 				F3F3777B2B94F8DB0092DCBD /* Util */,
 				F3F9D8332B937D1D004E5CC9 /* Assets.xcassets */,
 				F3F9D8352B937D1D004E5CC9 /* Preview Content */,
@@ -210,7 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3F9D83E2B937D38004E5CC9 /* Trip.swift in Sources */,
-				F31C0BBE2B9407C7006B0FED /* TripListView.swift in Sources */,
+				F31C0BBE2B9407C7006B0FED /* HomeContentView.swift in Sources */,
 				F3F377782B94F8510092DCBD /* StarToolbarItem.swift in Sources */,
 				F3F377702B94D78B0092DCBD /* DynamicStack.swift in Sources */,
 				F3F377722B94E70B0092DCBD /* EditTripInfoSection.swift in Sources */,
@@ -219,9 +222,10 @@
 				F3FBAECD2B93B12C00732608 /* AppError.swift in Sources */,
 				F31C0BBC2B9405A5006B0FED /* DeleteTripToolbarItem.swift in Sources */,
 				F3F9D8322B937D1C004E5CC9 /* HomeView.swift in Sources */,
+				F3F3777D2B94FAAF0092DCBD /* TripListView.swift in Sources */,
 				F3F377762B94E7520092DCBD /* EditTripSaveButton.swift in Sources */,
 				F3F9D8302B937D1C004E5CC9 /* TripPlannerApp.swift in Sources */,
-				F3F9D8402B9383CC004E5CC9 /* EditTripView.swift in Sources */,
+				F3F9D8402B9383CC004E5CC9 /* TripDetailView.swift in Sources */,
 				F3FBAED72B93D38200732608 /* Date+Abbreviated.swift in Sources */,
 				F31C0BBA2B940538006B0FED /* NewTripToolbarItem.swift in Sources */,
 				F3FBAED52B93D29400732608 /* Preview+Trip.swift in Sources */,

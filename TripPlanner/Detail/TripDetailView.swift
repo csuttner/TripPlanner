@@ -1,5 +1,5 @@
 //
-//  EditTripView.swift
+//  TripDetailView.swift
 //  TripPlanner
 //
 //  Created by Clay Suttner on 3/2/24.
@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 
-struct EditTripView: View {
+struct TripDetailView: View {
     init(trip: Trip) {
         self.trip = trip
         self.changesSaved = !trip.hasChanges
@@ -43,6 +43,6 @@ struct EditTripView: View {
 #Preview {
     let (trip, container) = Preview.trip
     
-    return EditTripView(trip: trip)
+    return TripDetailView(trip: trip)
         .modelContainer(container)
 }

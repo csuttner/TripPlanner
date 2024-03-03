@@ -2,7 +2,7 @@
 //  TripListView.swift
 //  TripPlanner
 //
-//  Created by Clay Suttner on 3/2/24.
+//  Created by Clay Suttner on 3/3/24.
 //
 
 import SwiftUI
@@ -10,60 +10,31 @@ import SwiftUI
 struct TripListView: View {
     @Environment(\.modelContext) private var context
     
-    var trips: [Trip]
+    var results: [Trip]
     
-    @Binding var selection: Set<String>
-    @Binding var path: [Trip]
-    @Binding var editMode: EditMode
-    
-    @State private var query = ""
-    
-    private var results: [Trip] {
-        query.isEmpty ? trips : trips.filter {
-            $0.name.contains(query) ||
-            $0.destination.contains(query)
-        }
-    }
+    @Binding var config: HomeConfig
     
     var body: some View {
-        VStack {
-            if trips.isEmpty {
-                ContentUnavailableView(
-                    "Add a trip to get started",
-                    systemImage: "sparkles"
-                )
-                .symbolRenderingMode(.multicolor)
-                
-            } else if results.isEmpty {
-                ContentUnavailableView(
-                    "No search results for \(query)",
-                    systemImage: "text.magnifyingglass"
-                )
-                .symbolRenderingMode(.multicolor)
-                
-            } else {
-                List(results, id: \.id, selection: $selection) { trip in
-                    TripListRow(trip: trip, editMode: $editMode) {
-                        path.append(trip)
-                    }
-                    .swipeActions(edge: .leading, allowsFullSwipe: false) {
-                        Button {
-                            trip.isStarred.toggle()
-                        } label: {
-                            Image(systemName: trip.isStarred ? "star.slash" : "star.fill")
-                        }
-                        .tint(trip.isStarred ? .gray : .yellow)
-                    }
-                    .swipeActions(edge: .trailing) {
-                        Button(role: .destructive) {
-                            context.delete(trip)
-                        } label: {
-                            Label("Delete", systemImage: "trash")
-                        }
-                    }
+        List(results, id: \.id, selection: $config.selection) { trip in
+            TripListRow(trip: trip, editMode: $config.editMode) {
+                config.path.append(trip)
+            }
+            .swipeActions(edge: .leading, allowsFullSwipe: false) {
+                Button {
+                    trip.isStarred.toggle()
+                } label: {
+                    Image(systemName: trip.isStarred ? "star.slash" : "star.fill")
+                }
+                .tint(trip.isStarred ? .gray : .yellow)
+            }
+            .swipeActions(edge: .trailing) {
+                Button(role: .destructive) {
+                    context.delete(trip)
+                } label: {
+                    Label("Delete", systemImage: "trash")
                 }
             }
         }
-        .searchable(text: $query)
+        .listStyle(.plain)
     }
 }
